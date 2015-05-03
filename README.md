@@ -50,3 +50,8 @@ and Case 3. just see the result below... :D
 02 33 36 47 44 21 18 
 
 01 34 35 46 45 20 19 
+
+
+just it. hope this is useful for u.
+
+Thanks
