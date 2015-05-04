@@ -1,4 +1,5 @@
 <?PHP
+$startTime = microtime(true);
 $angka = isset($_GET["angka"]) ? $_GET["angka"] : 9;
 $start = isset($_GET["start"]) ? $_GET["start"] : 5;
 $kuadrat = $angka*$angka;
@@ -30,12 +31,14 @@ while ($z <= $finish) {
 	}
 }
 
+echo "<table border='0' cellpadding='2'><tr>";
 for ($i=0; $i<$kuadrat; $i++) {
 	$y = $array[$i];
 	$cetak = ($y<10) ? "0".$y : $y;
-	if ($y == $start) echo "<span style='background:red; color:#FFF; padding:10px'>".$cetak."</span>";
-	else if ($y == $finish) echo "<span style='background:green; color:#FFF; padding:10px;'>".$cetak."</span>";
-	else echo "<span style='padding:10px'>".$cetak."</span>";
-	if ($i%$angka==($angka-1)) echo "<br /><br />";
+	if ($y == $start) echo "<td style='background:red; color:#FFF;'>".$cetak."</td>";
+	else if ($y == $finish) echo "<td style='background:green; color:#FFF;'>".$cetak."</td>";
+	else echo "<td>".$cetak."</td>";
+	if ($i%$angka==($angka-1)) echo "</tr><tr>";
 }
+echo "</table><p>Time:  " . number_format(( microtime(true) - $startTime), 4) . " Seconds</p>";
 ?>
