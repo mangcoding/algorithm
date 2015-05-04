@@ -1,10 +1,12 @@
 <?PHP
-$angka = isset($_GET["angka"]) ? $_GET["angka"] : 7;
+$angka = isset($_GET["angka"]) ? $_GET["angka"] : 9;
+$start = isset($_GET["start"]) ? $_GET["start"] : 5;
 $kuadrat = $angka*$angka;
 $a=$kuadrat-$angka;
-$z = 1;
+$z = $start;
+$finish = $kuadrat+$start;
 $atas = 1; $bawah=0; $kanan=0; $kiri=0;
-while ($z <= $kuadrat) {
+while ($z <= $finish) {
 	$array[$a] = $z++;
 	if ($atas == 1 && !isset($array[$a-$angka])) {
 		$a -= $angka;
@@ -29,8 +31,11 @@ while ($z <= $kuadrat) {
 }
 
 for ($i=0; $i<$kuadrat; $i++) {
-	$cetak = ($array[$i]<10) ? "0".$array[$i] : $array[$i];
-	echo $cetak." ";
-	if ($i%$angka==($angka-1)) echo "\n\n";
+	$y = $array[$i];
+	$cetak = ($y<10) ? "0".$y : $y;
+	if ($y == $start) echo "<span style='background:red; color:#FFF; padding:10px'>".$cetak."</span>";
+	else if ($y == $finish) echo "<span style='background:green; color:#FFF; padding:10px;'>".$cetak."</span>";
+	else echo "<span style='padding:10px'>".$cetak."</span>";
+	if ($i%$angka==($angka-1)) echo "<br /><br />";
 }
 ?>
