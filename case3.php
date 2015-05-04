@@ -31,14 +31,13 @@ while ($z <= $finish) {
 	}
 }
 
-echo "<table border='0' cellpadding='2'><tr>";
+echo "<table border='0' cellpadding='5'><tr>";
 for ($i=0; $i<$kuadrat; $i++) {
 	$y = $array[$i];
-	$cetak = ($y<10) ? "0".$y : $y;
-	if ($y == $start) echo "<td style='background:red; color:#FFF;'>".$cetak."</td>";
-	else if ($y == $finish) echo "<td style='background:green; color:#FFF;'>".$cetak."</td>";
-	else echo "<td>".$cetak."</td>";
+	if ($y == $start) echo "<td style='background:red; color:#FFF;'>".$y."</td>";
+	else if ($y == $finish) echo "<td style='background:green; color:#FFF;'>".$y."</td>";
+	else echo "<td>".$y."</td>";
 	if ($i%$angka==($angka-1)) echo "</tr><tr>";
 }
-echo "</table><p>Time:  " . number_format(( microtime(true) - $startTime), 4) . " Seconds</p>";
+echo "</tr></table><p>Time:  " . number_format(( microtime(true) - $startTime), 4) . " Seconds</p>";
 ?>
