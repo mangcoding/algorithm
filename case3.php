@@ -5,7 +5,7 @@ $start = isset($_GET["start"]) ? $_GET["start"] : 5;
 $kuadrat = $angka*$angka;
 $a=$kuadrat-$angka;
 $z = $start;
-$finish = $kuadrat+$start;
+$finish = $kuadrat+$start-1;
 $atas = 1; $bawah=0; $kanan=0; $kiri=0;
 while ($z <= $finish) {
 	$array[$a] = $z++;
